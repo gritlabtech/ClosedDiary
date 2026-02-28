@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClosedDiary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #080808;
+    --text: #c8c2b8;
+    --dim: #5a554e;
+    --accent: #d4c9b8;
+    --rule: #1e1c1a;
+  }
+
+  html { background: var(--bg); }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier Prime', monospace;
+    font-size: 14px;
+    line-height: 1.9;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Subtle grain */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 100px 32px 120px;
+  }
+
+  header {
+    margin-bottom: 96px;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 8vw, 56px);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  .section {
+    margin-bottom: 72px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease both;
+  }
+
+  .section:nth-child(1) { animation-delay: 0.15s; }
+  .section:nth-child(2) { animation-delay: 0.25s; }
+  .section:nth-child(3) { animation-delay: 0.35s; }
+  .section:nth-child(4) { animation-delay: 0.45s; }
+  .section:nth-child(5) { animation-delay: 0.55s; }
+  .section:nth-child(6) { animation-delay: 0.65s; }
+  .section:nth-child(7) { animation-delay: 0.75s; }
+  .section:nth-child(8) { animation-delay: 0.85s; }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--accent);
+    margin-bottom: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  .rule {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--dim);
+    margin-bottom: 20px;
+  }
+
+  .body-text {
+    color: var(--text);
+    white-space: pre-line;
+    font-size: 13.5px;
+    line-height: 2;
+    opacity: 0.85;
+  }
+
+  .body-text strong, .emphasis {
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0 0 72px;
+  }
+
+  footer {
+    margin-top: 96px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--dim);
+    animation: fadeUp 0.7s ease 1s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>ClosedDiary</h1>
+    <p class="subtitle">Privacy Policy</p>
+  </header>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">We Don't Watch You</div>
+    <div class="body-text">We collect nothing.
+No accounts.
+No tracking.
+No analytics.
+No ads.
+No servers.
+
+Your data is not our business.</div>
+  </div>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">Your Words Stay With You</div>
+    <div class="body-text">Everything you write stays on your device.
+It never leaves.
+It is never uploaded.
+It is never read by us.
+
+If you delete the app or lose your device,
+your words go with it.
+We cannot recover them — by design.</div>
+  </div>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">Security, Quietly</div>
+    <div class="body-text">Your writing is protected with on-device encryption.
+You hold the key.
+We never see your content.</div>
+  </div>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">No Internet Required</div>
+    <div class="body-text">ClosedDiary works fully offline.
+There is no cloud.
+There is no feed.
+There is no algorithm.</div>
+  </div>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">No Third Parties</div>
+    <div class="body-text">We don't share your data
+because we never have it.
+
+No advertisers.
+No trackers.
+No hidden SDKs.</div>
+  </div>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">For Everyone, Safely</div>
+    <div class="body-text">We don't collect personal data from anyone —
+including children.</div>
+  </div>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">Your Control</div>
+    <div class="body-text">Your words are yours to:
+Keep.
+Edit.
+Delete.
+Protect.
+
+We stay out of it.</div>
+  </div>
+
+  <div class="section">
+    <span class="rule"></span>
+    <div class="section-title">If This Ever Changes</div>
+    <div class="body-text">We'll tell you
+clearly and honestly.</div>
+  </div>
+
+  <footer>
+    &copy; ClosedDiary &nbsp;·&nbsp; Nothing collected &nbsp;·&nbsp; Nothing stored
+  </footer>
+
+</div>
+</body>
+</html>
